@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Home from './Home'
 import Navbar from './Navbar'
+import About from './About'
 import loadingImage from "/circle_logo.png"
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
     <>
       <Navbar />
       <Home />
+      <About />
     </>
   )
 }
