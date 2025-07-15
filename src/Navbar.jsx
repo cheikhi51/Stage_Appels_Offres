@@ -18,7 +18,7 @@ function Navbar(){
                         <a href="#home" className="nav-link">Acceuil</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#about" className="nav-link">A propos</a>
+                        <a href="#about" className="nav-link">À propos</a>
                     </li>
                     <li className="nav-item">
                         <a href="#services" className="nav-link">Services</a>

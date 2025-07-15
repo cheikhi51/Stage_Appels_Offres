@@ -118,10 +118,14 @@ body{
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    border:1px solid rgb(127, 208, 255);
+    padding: 6px;
+    border-radius:5px ;
+    box-shadow: 0 0 2px whitesmoke;
 }
 .nav-toggle.active{
-    border:2px solid rgb(127, 255, 242);
-    padding: 5px;
+    border:1px solid rgb(127, 208, 255);
+    padding: 6px;
     border-radius: 5px;
     text-align: center;
 }
@@ -387,8 +391,9 @@ body{
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
-    background: #020024;
-    background: linear-gradient(135deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);flex-direction: column;
+   background: #334fd6;
+   background: radial-gradient(circle, rgba(51, 79, 214, 1) 0%, rgba(1, 0, 3, 1) 100%);
+    flex-direction: column;
     justify-content: flex-start;
     padding-top: 50px;
     transition: left 0.3s ease;
@@ -432,4 +437,9 @@ body{
     flex-wrap: wrap;
     gap: 8px;
   }
+}
+
+/*About section */
+.about-container{
+    display: flex;
 }
