@@ -10,7 +10,7 @@ function Home(){
         return ()=> clearInterval(interval)
     },[texts.length])
     return(
-        <div className="home-container">
+        <div className="home-container" id="home">
             <div class="g1"></div>
             <div class="g2"></div>
             <div class="g3"></div>

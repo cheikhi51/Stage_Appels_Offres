@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import image from "/offerTrack_logo_prev_ui.png";
 function Navbar(){
+    const [isScrolled,setIsScrolled] = useState(null);
     const [isMenuOpen , setIsMenuOpen] = useState(false);
+    const [homeHeight, setHomeHeight] = useState(0);
+
+   useEffect(() => {
+        const handleScroll = () => {
+        const isScrolled = window.scrollY > 10;
+        setIsScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
 
     const toggleMenu = ()=>{
         setIsMenuOpen(!isMenuOpen);
     }
     return(
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
             <div className="logo-container">
                 <img className="logo-image" src={image} alt="Logo image" />
@@ -15,7 +29,7 @@ function Navbar(){
             
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <li className="nav-item">
-                        <a href="#home" className="nav-link">Acceuil</a>
+                        <a href="#home" className="nav-link">Accueil</a>
                     </li>
                     <li className="nav-item">
                         <a href="#about" className="nav-link">À propos</a>
@@ -24,7 +38,7 @@ function Navbar(){
                         <a href="#services" className="nav-link">Services</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#contact" className="nav-link">Contact</a>
+                        <a href="#contact" className="nav-link">Contacter-nous</a>
                     </li>
                 </ul>
             <div className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>

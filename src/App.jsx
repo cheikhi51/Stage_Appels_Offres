@@ -4,6 +4,9 @@ import Home from './Home'
 import Navbar from './Navbar'
 import About from './About'
 import loadingImage from "/circle_logo.png"
+import Services from './Services'
+import Contact from './Contact'
+import Footer from './Footer'
 function App() {
 
   const [isLoading,setIsLoading] = useState(true);
@@ -32,6 +35,9 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Services />
+      <Contact />
+      <Footer />
     </>
   )
 }
