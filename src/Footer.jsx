@@ -6,7 +6,7 @@ function Footer(){
     return(
         <div className="footer-container">
             <img className="logo-image" src={logoImage} alt="logo image" />
-            <h3>© Copyrights OfferTrack All Rights Reserved</h3>
+            <h3>© Copyright OfferTrack — Tous droits réservés</h3>
             <div className="quick-links">
                 <a href="#home">Accueil</a>
                 <a href="#about">À propos</a>

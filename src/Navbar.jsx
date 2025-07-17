@@ -43,6 +43,12 @@ function Navbar(){
                     <li className="nav-item">
                         <a href="#contact" className="nav-link">Contacter-nous</a>
                     </li>
+                    <li className="nav-item">
+                        <button className="login-btn">Se Connecter</button>
+                    </li>
+                    <li className="nav-item">
+                        <button className="sign-up-btn">Créer un compte</button>
+                    </li>
                 </ul>
             <div className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                 <span className="bar"></span>

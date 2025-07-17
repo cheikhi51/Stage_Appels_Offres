@@ -8,6 +8,7 @@ import Services from './Services'
 import Contact from './Contact'
 import Footer from './Footer'
 import Faq from './Faq'
+import Secteurs from './Secteurs'
 function App() {
 
   const [isLoading,setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ function App() {
       <Home />
       <About />
       <Services />
+      <Secteurs />
       <Faq />
       <Contact />
       <Footer />
