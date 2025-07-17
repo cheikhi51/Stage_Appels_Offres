@@ -41,6 +41,19 @@ function Contact(){
     return(
         <div className="contact-container" id="contact">
             <h1 className="section-title">Contacter-nous</h1>
+            <p className="section-description">
+                Une question, un besoin spécifique ou envie d'en savoir plus ? Contactez notre équipe pour une réponse rapide et adaptée.
+            </p>
+            {errorMessage && 
+                <div className="error-message fade-in-text">
+                    Veuillez remplir le formulaire
+                </div> 
+            }
+            {successMessage && 
+                <div className="success-message fade-in-text">
+                    Votre message a été envoyé avec succès
+                </div>
+            }
             <div className="contact-content">
             <form className="form" onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -101,17 +114,6 @@ function Contact(){
                 </form>
             <img className="world-map" src={worldMap} alt="world map image" />
             </div>
-            {errorMessage && 
-                <div className="error-message fade-in-text">
-                    Veuillez remplir le formulaire
-                </div> 
-            }
-            {successMessage && 
-                <div className="success-message fade-in-text">
-                    Votre message a été envoyé avec succès
-                </div>
-            }
-            
         </div>
     )
 }

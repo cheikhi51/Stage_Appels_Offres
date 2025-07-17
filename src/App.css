@@ -184,20 +184,21 @@ body{
 .hero-title{
     transform: scale(2);
     background-clip: text;
-    background: linear-gradient(145deg, rgb(102, 0, 133) 0%, rgb(22, 176, 182) 40%, rgb(163, 229, 242) 70%,rgb(209, 250, 255) 100%);
+    background: linear-gradient(90deg, rgb(29, 0, 133) 0%, rgb(22, 129, 182) 40%, rgb(3, 191, 228) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
     margin-top: 50px;
 }
 .text-element{
-    color: rgb(204, 240, 240);
+    background-clip: text;
+    background: linear-gradient(90deg, rgb(29, 0, 133) 0%, rgb(22, 129, 182) 40%, rgb(3, 191, 228) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
     position: absolute;
     top: 0;
 }
 .rotating-text-container{
     position: relative;
-    background: #020024;
-    background: linear-gradient(145deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
     width: 120px;
     height: 30px;
     padding: 0 6px;
@@ -390,6 +391,28 @@ body{
         opacity: 0.8;
     }
 }
+.up-button{
+    color: white;
+    background: #334fd6;
+    background: radial-gradient(circle, rgb(42, 0, 126) 0%,rgba(51, 79, 214, 1) 100%);
+    border: 1px solid #334fd6;
+    box-shadow: 0 0 10px #334fd6;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    z-index: 40;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.up-button:hover{
+    transform: translateY(-3px) scale(1.1);
+}
 @media screen and (max-width: 768px) {
 
     .nav-menu {
@@ -428,7 +451,6 @@ body{
     text-align: center;
   }
   .sub-hero{
-    transform: scale(0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -475,6 +497,19 @@ body{
     
     .contact-container {
         padding: 20px;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    .footer-container h3{
+        font-size: 20px;
+        text-align: center;
     }
 }
 
@@ -560,6 +595,13 @@ body{
     gap: 50px;
     margin-top: 50px;
 }
+.section-description{
+    color: #999;
+    font-size: large;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
 .service-card{
     display: flex;
     justify-content: center;
@@ -593,6 +635,72 @@ body{
     transform: scale(2.7);
     color: #0a5bab;
 }
+/*FAQ*/
+.faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(145deg, #fffefe 0%, #fffefe 100%);
+    padding: 40px;
+    color: #060606;
+    position: relative;
+    overflow: hidden;
+}
+.faq-section {
+    margin-top: 50px;
+    max-width: 800px;
+    width: 100%;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #fffefe 0%, #fffefe 100%);
+    box-shadow: 0 7px 10px rgb(208, 208, 208);
+}
+
+.faq-item {
+  background: linear-gradient(90deg, rgba(29, 0, 133, 0.837) 0%, rgba(22, 129, 182, 0.837) 40%, rgba(3, 190, 228, 0.837) 100%);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.faq-item:hover {
+  background: linear-gradient(90deg, rgb(29, 0, 133) 0%, rgba(22, 129, 182) 40%, rgba(3, 190, 228) 100%);
+}
+
+.faq-question {
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-size: 20px;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #fff4f4;
+  font-size: 17px;
+}
+.faq-item.active .faq-question::after {
+  content: "▲";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-item:not(.active) .faq-question::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 /*Contact Section */
 
 .contact-container{
@@ -614,13 +722,13 @@ body{
 }
 .contact-content{
     margin: 40px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; 
-  gap: 40px;       
-  width: 100%;
-  max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 50px;       
+    width: 100%;
+    max-width: 1500px;
 }
 .form {
     background: #fff;
@@ -704,7 +812,6 @@ body{
     border-radius: 10px;
     font-size: larger;
     font-weight: 500;
-    animation: slideInText 1s ease-out forwards;
 }
 .success-message{
     background-color: rgb(27, 186, 27);
@@ -713,7 +820,6 @@ body{
     border-radius: 10px;
     font-size: larger;
     font-weight: 500;
-    animation: slideInText 1s ease-out forwards;
 }
 @keyframes fadeInText {
     from{
@@ -729,6 +835,19 @@ body{
     opacity: 1;
     animation: fadeInText 1s ease-in-out;
 }
+@keyframes SlideAnimation {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in-text{
+    animation: SlideAnimation 0.9s ease-in-out;
+}
 
 /*Footer Section*/
 .footer-container{
@@ -738,7 +857,7 @@ body{
     background: #334fd6;
     background: radial-gradient(circle, rgba(51, 79, 214, 1) 0%, rgba(1, 0, 3, 1) 100%);
     color: white;
-    height: 200px;
+    min-height: 200px;
 }
 .quick-links{
     display: flex;

@@ -38,6 +38,9 @@ function Navbar(){
                         <a href="#services" className="nav-link">Services</a>
                     </li>
                     <li className="nav-item">
+                        <a href="#faq" className="nav-link">Foire Aux Questions</a>
+                    </li>
+                    <li className="nav-item">
                         <a href="#contact" className="nav-link">Contacter-nous</a>
                     </li>
                 </ul>

@@ -11,6 +11,7 @@ function Footer(){
                 <a href="#home">Accueil</a>
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
+                <a href='#faq'>Foire Aux Questions</a>
                 <a href="#contact">Contacter-nous</a>
             </div>
             <div className='social-media-fonts'>

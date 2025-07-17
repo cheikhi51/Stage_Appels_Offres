@@ -3,6 +3,10 @@ function Services(){
     return(
         <div className="services-container" id="services">
       <h1 className="section-title">Nos Services</h1>
+      <p className="section-description">
+        Découvrez une suite complète de solutions intelligentes conçues pour analyser, optimiser et suivre vos appels d'offres. Grâce à notre plateforme, vous gagnez en efficacité à chaque étape du processus.
+      </p>
+
       <div className="services-section">
         <div className="service-card">
           <FaChartLine className="service-icon" />

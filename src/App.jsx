@@ -7,6 +7,7 @@ import loadingImage from "/circle_logo.png"
 import Services from './Services'
 import Contact from './Contact'
 import Footer from './Footer'
+import Faq from './Faq'
 function App() {
 
   const [isLoading,setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ function App() {
       <Home />
       <About />
       <Services />
+      <Faq />
       <Contact />
       <Footer />
     </>
