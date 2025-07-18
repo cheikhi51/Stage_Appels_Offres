@@ -6,9 +6,11 @@ function Navbar({setShowSignUp,setShowLogin}){
     
     const handleShowSignUp = ()=>{
         setShowSignUp(true);
+        setShowLogin(false);
     }
     const handleShowLogin = ()=>{
         setShowLogin(true);
+        setShowSignUp(false);
     }
    useEffect(() => {
         const handleScroll = () => {

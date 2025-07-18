@@ -38,8 +38,8 @@ function App() {
   return (
     <>
       <Navbar setShowSignUp={setShowSignUp} setShowLogin={setShowLogin}/>
-      {showSignUp && <Signup setShowSignUp={setShowSignUp}/>}
-      {showLogin && <Login  setShowLogin={setShowLogin}/>}
+      {(showSignUp && !showLogin) && <Signup showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>}
+      {(showLogin && !showSignUp) && <Login showLogin={showLogin}  setShowLogin={setShowLogin}/>}
       <Home />
       <About />
       <Services />
