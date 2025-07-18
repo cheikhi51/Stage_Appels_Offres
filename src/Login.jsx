@@ -12,7 +12,9 @@ function Login({setShowLogin}){
     const handleCancelLogin = ()=>{
         setShowLogin(false);
     }
+    
     return(
+        <div className="login-container">
         <form className="login-form fade-element" onSubmit={handleLoginDataSubmit}>
             <div className="form-group">
                         <label htmlFor="email">Email *</label>
@@ -44,10 +46,11 @@ function Login({setShowLogin}){
                             Envoyer
                         </button>
                         <button type="submit" className="cancel-btn" onClick={handleCancelLogin}>
-                            Retour
+                            Fermer
                         </button>
                     </div>
         </form>
+        </div>
     )
 }
 export default Login

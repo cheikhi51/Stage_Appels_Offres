@@ -1,25 +1,57 @@
-import { useState } from "react"
+import { useState,useEffect} from "react"
 
 function Signup({setShowSignUp}){
     const [signUpData,setSignUpData] = useState({nom:"",email:"",password:""});
+    const [successMessage,setSuccessMessage] = useState(null);
+    const [errorMessage,setErrorMessage]=useState(null);
+
     const handleChange = (e)=>{
         setSignUpData(prevSignUpData => ({...prevSignUpData,[e.target.name]:e.target.value}))
     }
 
     const handleSignUpSubmit = (e)=>{
         e.preventDefault();
-        setSignUpData({
-            nom:"",
-            email:"",
-            password:""
-        })
+
+    if (
+      signUpData.nom.trim() === "" ||
+      signUpData.email.trim() === "" ||
+      signUpData.password.trim() === ""
+    ) {
+      setErrorMessage("Veuillez remplir tous les champs.");
+      setSuccessMessage(null);
+      return;
     }
 
-    const handleCancel = ()=>{
+    setSuccessMessage("Les informations sont envoyées avec succès");
+    setErrorMessage(null);
+
+    setSignUpData({
+      nom: "",
+      email: "",
+      password: ""
+    });
+}
+
+    useEffect(()=>{
+            const  successTimer = setInterval(()=>{
+                setSuccessMessage(false);
+            },4000)
+    
+            return ()=>{ clearInterval(successTimer)}
+        },[successMessage])
+
+    const handleCancel = (e)=>{
+        e.preventDefault();
         setShowSignUp(false);
     }
     return(
+            <div className="sign-up-container">
             <form className="sign-up-form fade-element" onSubmit={handleSignUpSubmit}>
+                {successMessage && 
+                <div className="success-form-message fade-element">
+                    Informations envoyées avec succès
+                </div>
+                }
                 <div className="form-group">
                         <label htmlFor="nom">Nom complet *</label>
                         <input
@@ -63,11 +95,12 @@ function Signup({setShowSignUp}){
                             Envoyer
                         </button>
                         <button type="submit" className="cancel-btn" onClick={handleCancel}>
-                            Retour
+                            Fermer
                         </button>
                     </div>
                     
             </form>
+            </div>
     )
 }
 export default Signup
