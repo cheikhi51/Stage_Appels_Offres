@@ -9,10 +9,13 @@ import Contact from './Contact'
 import Footer from './Footer'
 import Faq from './Faq'
 import Secteurs from './Secteurs'
+import Signup from './Signup'
+import Login from './Login'
 function App() {
 
   const [isLoading,setIsLoading] = useState(true);
-
+  const [showSignUp,setShowSignUp] = useState(false);
+  const [showLogin,setShowLogin] = useState(false);
   useEffect(()=>{
     const interval = setInterval(()=>{
         setIsLoading(false);
@@ -34,7 +37,9 @@ function App() {
   }
   return (
     <>
-      <Navbar />
+      <Navbar setShowSignUp={setShowSignUp} setShowLogin={setShowLogin}/>
+      {showSignUp && <Signup setShowSignUp={setShowSignUp}/>}
+      {showLogin && <Login  setShowLogin={setShowLogin}/>}
       <Home />
       <About />
       <Services />

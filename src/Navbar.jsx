@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import image from "/offerTrack_logo_prev_ui.png";
-function Navbar(){
+function Navbar({setShowSignUp,setShowLogin}){
     const [isScrolled,setIsScrolled] = useState(null);
     const [isMenuOpen , setIsMenuOpen] = useState(false);
-    const [homeHeight, setHomeHeight] = useState(0);
-
+    
+    const handleShowSignUp = ()=>{
+        setShowSignUp(true);
+    }
+    const handleShowLogin = ()=>{
+        setShowLogin(true);
+    }
    useEffect(() => {
         const handleScroll = () => {
         const isScrolled = window.scrollY > 10;
@@ -44,10 +49,10 @@ function Navbar(){
                         <a href="#contact" className="nav-link">Contacter-nous</a>
                     </li>
                     <li className="nav-item">
-                        <button className="login-btn">Se Connecter</button>
+                        <button className="login-btn" onClick={handleShowLogin}>Se Connecter</button>
                     </li>
                     <li className="nav-item">
-                        <button className="sign-up-btn">Créer un compte</button>
+                        <button className="sign-up-btn" onClick={handleShowSignUp}>Créer un compte</button>
                     </li>
                 </ul>
             <div className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
