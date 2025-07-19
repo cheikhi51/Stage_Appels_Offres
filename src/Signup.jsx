@@ -72,7 +72,7 @@ function Signup({setShowSignUp}){
                 </div>
                 }
                 <div className="form-group">
-                        <label htmlFor="nom">Nom complet *</label>
+                        <label htmlFor="nom">Nom complet <span>*</span></label>
                         <input
                             type="text"
                             id="nom"
@@ -85,7 +85,7 @@ function Signup({setShowSignUp}){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">Email *</label>
+                        <label htmlFor="email">Email <span>*</span></label>
                         <input
                             type="email"
                             id="email"
@@ -98,7 +98,7 @@ function Signup({setShowSignUp}){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password *</label>
+                        <label htmlFor="password">Password <span>*</span></label>
                         <input
                             type="password"
                             id="password"

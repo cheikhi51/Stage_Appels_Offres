@@ -5,7 +5,7 @@ function Login({setShowLogin}){
     const [LoginData,setLoginData] = useState({email:"",password:""});
     const [showSendIcon,setShowSendIcon] = useState(null);
     const [showCloseIcon,setShowCloseIcon] = useState(null);
-    
+
     const handleChange = (e)=>{
         setLoginData(prevLoginData=>({...prevLoginData, [e.target.name]:e.target.value}));
     }
@@ -35,7 +35,7 @@ function Login({setShowLogin}){
         <div className="login-container">
         <form className="login-form fade-element" onSubmit={handleLoginDataSubmit}>
             <div className="form-group">
-                        <label htmlFor="email">Email *</label>
+                        <label htmlFor="email">Email <span>*</span></label>
                         <input
                             type="email"
                             id="email"
@@ -48,7 +48,7 @@ function Login({setShowLogin}){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password *</label>
+                        <label htmlFor="password">Password <span>*</span></label>
                         <input
                             type="password"
                             id="password"

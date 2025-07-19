@@ -66,7 +66,7 @@ function Contact(){
             <div className="contact-content">
             <form className="form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="nom">Nom complet *</label>
+                        <label htmlFor="nom">Nom complet <span>*</span></label>
                         <input
                             type="text"
                             id="nom"
@@ -79,7 +79,7 @@ function Contact(){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">Email *</label>
+                        <label htmlFor="email">Email <span>*</span></label>
                         <input
                             type="email"
                             id="email"
@@ -92,7 +92,7 @@ function Contact(){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="sujet">Sujet *</label>
+                        <label htmlFor="sujet">Sujet <span>*</span></label>
                         <input
                             type="text"
                             id="sujet"
@@ -105,7 +105,7 @@ function Contact(){
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="message">Message *</label>
+                        <label htmlFor="message">Message <span>*</span></label>
                         <textarea
                             id="message"
                             name="message"
