@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import worldMap from "/world_map.png";
+import { IoIosSend } from "react-icons/io";
 function Contact(){
     const [formData,setFormData] = useState({nom:"",email:"",sujet:"",message:""});
     const [errorMessage,setErrorMessage]=useState(null);
     const [successMessage,setSuccessMessage] = useState(null);
+    const [showSendIcon,setShowSendIcon] = useState(null);
     const handleChange = (e)=>{
         setFormData(prev => ({ ...prev , [e.target.name] : e.target.value}));
     }
@@ -38,6 +40,13 @@ function Contact(){
 
         return ()=>{ clearInterval(successTimer)}
     },[successMessage])
+    const handleMouseEnter = ()=>{
+        setShowSendIcon(true);
+    }
+    const handleMouseLeave = ()=>{
+        setShowSendIcon(false);
+    }
+
     return(
         <div className="contact-container" id="contact">
             <h1 className="section-title">Contacter-nous</h1>
@@ -108,8 +117,8 @@ function Contact(){
                         />
                     </div>
 
-                    <button type="submit" className="submit-btn">
-                        Envoyer le message
+                    <button type="submit" className="submit-btn" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        Envoyer le message {showSendIcon && <IoIosSend className={`send-icon ${showSendIcon ? 'slide-element':''}`}  size={20}/>}
                     </button>
                 </form>
             <img className="world-map" src={worldMap} alt="world map image" />

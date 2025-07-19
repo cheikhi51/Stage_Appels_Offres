@@ -962,6 +962,10 @@ body{
 }
 
 .submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 100%;
     padding: 12px 20px;
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
@@ -971,7 +975,7 @@ body{
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.7s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -984,6 +988,20 @@ body{
 
 .submit-btn:active {
     transform: translateY(0);
+}
+@keyframes slideElement {
+    from{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-element{
+    opacity: 1;
+    animation:slideElement 0.7s ease-in-out;
 }
 .error-message{
     background: red;
@@ -1124,6 +1142,10 @@ body{
     gap: 10px;
 }
 .sign-up-submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 100%;
     max-width: 200px;
     padding: 12px 20px;
@@ -1144,6 +1166,10 @@ body{
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
 }
 .cancel-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 100%;
     max-width: 200px;
     padding: 12px 20px;
@@ -1210,6 +1236,10 @@ body{
     flex-wrap: wrap;
 }
 .login-submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     width: 100%;
     max-width: 200px;
     padding: 12px 20px;
@@ -1236,6 +1266,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 3px;
     font-weight: bold;
     margin-bottom: 5px;
 }

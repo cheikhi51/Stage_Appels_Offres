@@ -1,9 +1,13 @@
 import { useState,useEffect} from "react"
-
+import { GrValidate } from "react-icons/gr";
+import { IoIosSend } from "react-icons/io";
+import { IoMdCloseCircle } from "react-icons/io";
 function Signup({setShowSignUp}){
     const [signUpData,setSignUpData] = useState({nom:"",email:"",password:""});
     const [successMessage,setSuccessMessage] = useState(null);
     const [errorMessage,setErrorMessage]=useState(null);
+    const [showSendIcon,setShowSendIcon] = useState(null);
+    const [showCloseIcon,setShowCloseIcon] = useState(null);
 
     const handleChange = (e)=>{
         setSignUpData(prevSignUpData => ({...prevSignUpData,[e.target.name]:e.target.value}))
@@ -44,12 +48,27 @@ function Signup({setShowSignUp}){
         e.preventDefault();
         setShowSignUp(false);
     }
+
+    const handleSendIconMouseEnter = ()=>{
+        setShowSendIcon(true);
+    }
+    const handleSendIconMouseLeave = ()=>{
+        setShowSendIcon(false);
+    }
+
+    const handleCloseIconMouseEnter = ()=>{
+        setShowCloseIcon(true);
+    }
+    const handleCloseIconMouseLeave = ()=>{
+        setShowCloseIcon(false);
+    }
+
     return(
             <div className="sign-up-container">
             <form className="sign-up-form fade-element" onSubmit={handleSignUpSubmit}>
                 {successMessage && 
                 <div className="success-form-message fade-element">
-                    Informations envoyées avec succès
+                    <GrValidate />Informations envoyées avec succès
                 </div>
                 }
                 <div className="form-group">
@@ -91,11 +110,11 @@ function Signup({setShowSignUp}){
                         />
                     </div>
                     <div className="sign-up-btns">
-                        <button type="submit" className="sign-up-submit-btn">
-                            Envoyer
+                        <button type="submit" className="sign-up-submit-btn" onMouseEnter={handleSendIconMouseEnter} onMouseLeave={handleSendIconMouseLeave}>
+                            Envoyer {showSendIcon && <IoIosSend className={`send-icon ${showSendIcon ? 'slide-element':''}`}  size={20}/>}
                         </button>
-                        <button type="submit" className="cancel-btn" onClick={handleCancel}>
-                            Fermer
+                        <button type="submit" className="cancel-btn" onClick={handleCancel} onMouseEnter={handleCloseIconMouseEnter} onMouseLeave={handleCloseIconMouseLeave} >
+                            Fermer {showCloseIcon && <IoMdCloseCircle className={`close-icon ${showCloseIcon ? 'slide-element':''}`} size={20}/>}
                         </button>
                     </div>
                     
